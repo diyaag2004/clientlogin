@@ -10,6 +10,7 @@ import Profile from './components/Profile';
 import Recovery from './components/Recovery';
 import Reset from './components/Reset';
 import PageNotFound from './components/PageNotFound';
+import Waitlist from './components/Waitlist';
 
 
 /** auth middleware */
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
         path : '*',
         element : <PageNotFound></PageNotFound>
     },
+    {
+        path:'/waitlist',
+        element : <Waitlist></Waitlist>
+    }
 ])
 
 export default function App() {

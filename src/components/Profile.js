@@ -37,12 +37,14 @@ export default function Profile() {
         loading: 'Updating...',
         success : <b>Update Successfully...!</b>,
         error: <b>Could not Update!</b>
+      }).then(() => {
+        navigate('/waitlist'); // Redirect to Waitlist page after successful update
       });
 
     }
   })
 
-  /** formik doensn't support file upload so we need to create this handler */
+  /** formik doesn't support file upload so we need to create this handler */
   const onUpload = async e => {
     const base64 = await convertToBase64(e.target.files[0]);
     setFile(base64);
@@ -63,10 +65,10 @@ export default function Profile() {
       <Toaster position='top-center' reverseOrder={false}></Toaster>
 
       <div className='flex justify-center items-center h-screen'>
-        <div className={`${styles.glass} ${extend.glass}`} style={{ width: "45%", paddingTop: '3em'}}>
+        <div className={`${styles.glass} ${extend.glass}`} style={{ width: "45%", paddingTop: '3em',height:"100%"}}>
 
           <div className="title flex flex-col items-center">
-            <h4 className='text-5xl font-bold'>Profile</h4>
+            <h4 className='text-5xl font-bold  text-[#8C2F39]'>Profile</h4>
             <span className='py-4 text-xl w-2/3 text-center text-gray-500'>
                 You can update the details.
             </span>
@@ -110,4 +112,3 @@ export default function Profile() {
     </div>
   )
 }
-

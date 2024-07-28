@@ -113,3 +113,13 @@ export async function resetPassword({ username, password }){
         return Promise.reject({ error });
     }
 }
+
+/** Add to waitlist */
+export async function addToWaitlist(email){
+    try {
+        const { data, status } = await axios.post('/api/waitlist', { email });
+        return Promise.resolve({ data, status });
+    } catch (error) {
+        return Promise.reject({ error });
+    }
+}

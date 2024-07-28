@@ -1,14 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* > *{
-    font-family: 'Poppins', sans-serif;
+* > * {
+  font-family: "Poppins", sans-serif;
 }
 
-body{
-    background: #dcdce6;
-    background-image: url('./assets/Background.png');
+body {
+  background: #dcdce6;
+  background-image: url("./assets/Background2.png");
+  background-size: cover;
+  position: relative;
+  z-index: 1;
 }
+.bodywaitlist::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Adjust the alpha value to control darkness */
+  z-index: -1;
+}
+
+  .animate-gradient {
+    background-size: 300%;
+    -webkit-animation: animatedgradient 6s ease infinite alternate;
+    -moz-animation: animatedgradient 6s ease infinite alternate;
+    animation: animatedgradient 6s ease infinite alternate;
+  }
+  
+  @keyframes animatedgradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }

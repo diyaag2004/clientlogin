@@ -15,7 +15,7 @@ export default function Username() {
 
   const formik = useFormik({
     initialValues : {
-      username : 'example123'
+      username : ''
     },
     validate : usernameValidate,
     validateOnBlur: false,
@@ -32,10 +32,10 @@ export default function Username() {
       <Toaster position='top-center' reverseOrder={false}></Toaster>
 
       <div className='flex justify-center items-center h-screen'>
-        <div className={styles.glass}>
+        <div className={styles.glass} >
 
           <div className="title flex flex-col items-center">
-            <h4 className='text-5xl font-bold'>Hello Again!</h4>
+            <h4 className='text-5xl font-bold  text-[#8C2F39]'>Hello Again!</h4>
             <span className='py-4 text-xl w-2/3 text-center text-gray-500'>
               Explore More by connecting with us.
             </span>
@@ -52,7 +52,7 @@ export default function Username() {
               </div>
 
               <div className="text-center py-4">
-                <span className='text-gray-500'>Not a Member <Link className='text-red-500' to="/register">Register Now</Link></span>
+                <span className='text-[#000022]'>Not a Member <Link className='text-red-800' to="/register">Register Now</Link></span>
               </div>
 
           </form>
